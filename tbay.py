@@ -29,12 +29,12 @@ class User(Base):
   id = Column(Integer, primary_key=True)
   username = Column(String, nullable=False)
   password = Column(String, nullable=False)
-
+form 
 # Create the Bid model and table
 class Bid(Base):
   __tablename__ = "bid"
   
   id = Column(Integer, primary_key=True)
-  price = Column(Float, nullable=False)git 
+  price = Column(Float, nullable=False)
   
 Base.metadata.create_all(engine)
