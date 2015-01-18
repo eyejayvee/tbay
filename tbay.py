@@ -13,7 +13,7 @@ Session = sessionmaker(bind=engine)
 session = Session()
 Base = declarative_base()
 
-# Create the Item model
+# Create the Item model and table
 class Item(Base):
   __tablename__ = "items"
   
@@ -21,18 +21,20 @@ class Item(Base):
   name = Column(String, nullable=False)
   description = Column(String)
   start_time = Column(DateTime, default=datetime.utcnow)
-  
+
+# Create the User model and table
 class User(Base):
   __tablename__ = "user"
   
   id = Column(Integer, primary_key=True)
   username = Column(String, nullable=False)
   password = Column(String, nullable=False)
-  
+
+# Create the Bid model and table
 class Bid(Base):
   __tablename__ = "bid"
   
   id = Column(Integer, primary_key=True)
-  price = Column(Float, nullable=False)
+  price = Column(Float, nullable=False)git 
   
 Base.metadata.create_all(engine)
